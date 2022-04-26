@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Inter:wght@300&display=swap');
+
+html, body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.back {
+    background: -webkit-linear-gradient(top, rgb(0, 0, 0) 50%, rgb(25, 19, 39)80%, rgb(43, 32, 72));
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow-y : scroll;
+    overflow-x: hidden;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+.back::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+}
+
+.constelacao {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    position: absolute;
+    animation: rotate 600s infinite linear
+}
+
+.estrela {
+    pointer-events: none;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    animation-name: estrela;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.estrela.style1 { animation-duration: 0.5s; animation-name: estrela; }
+.estrela.style2 { animation-duration: 1s; animation-name: estrela; }
+.estrela.style3 { animation-duration: 1.5s; animation-name: estrela; }
+.estrela.style4 { animation-duration: 2s; animation-name: estrelaDestacada; }
+
+.estrela.tam1 { width: 1px; height: 1px; }
+.estrela.tam2 { width: 2px; height: 2px; }
+.estrela.tam3 { width: 3px; height: 3px; }
+
+.estrela.opacity1 { opacity:  1; }
+.estrela.opacity2 { opacity: .5; }
+.estrela.opacity3 { opacity: .1; }
+
+@keyframes estrela {
+    0% {
+        box-shadow: 0 0 15px 0px rgba(255, 255, 255, 0.05);
+    }
+    50% {
+        box-shadow: 0 0 15px 2px rgba(255, 255, 255, 0.4);
+    }
+    100% {
+        box-shadow: 0 0 15px 0px rgba(255, 255, 255, 0.05);
+    }
+}
+
+@keyframes estrelaDestacada {
+    0% {
+        background-color: #FFFFFF;
+        box-shadow: 0 0 15px 2px rgba(255, 255, 255, 1);
+    }
+    20% {
+        background-color: #FFC4C4;
+        box-shadow: 0 0 15px 0px rgb(255, 196, 196, 1);
+    }
+    80% {
+        background-color: #C4CFFF;
+        box-shadow: 0 0 15px 2px rgb(196, 207, 255, 1);
+    }
+    100% {
+        background-color: #FFFFFF;
+        box-shadow: 0 0 15px 0px rgba(255, 255, 255, 0.2);
+    }
+}
+@keyframes rotate {
+    0% {
+      -webkit-transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+    }
+}
+
+.lua {
+    position: absolute;
+    z-index: 3;
+    right: 120px;
+    top: 100px;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    box-shadow: 0 0 160px 0px #fff, 0 0 30px -4px #fff, 0 0 8px 2px rgba(255, 255, 255, 0.26);
+    background-color: #fff;
+    animation-name: lua;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+  }
+
+.lua .textura {
+    background-image: url(https://raw.githubusercontent.com/interaminense/starry-sky/master/src/img/bgMoon.png);
+    background-position: center;
+    background-size: 100%;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    left: 0;
+    top: 0;
+    border-radius: 50%;
+    overflow: hidden;
+    opacity: 0.4;
+    z-index: 2;
+}
+
+
+.inputAddr {
+   position: relative;
+   margin-top: 30%;
+   width: 50%;
+   height: 60%;
+   margin: 0 auto;
+   background-color: rgba(255, 255, 255, 0.1);
+   border-radius: 10px;
+   z-index: 10;
+}
+
+.userAddr {
+    margin: 0 auto;
+    margin-top: 20vh;
+}
+
+.userAddr input {
+    font-family: 'Gowun Dodum', sans-serif;
+    position: relative;
+    top: 10px;
+    left: 0%;
+    z-index: 10;
+    margin-top: 50px;
+    width: 300px;
+    height: 45px;
+    border-radius: 3px;
+    border: 0.8px solid rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.1);
+    appearance: none;
+    outline: 0;
+    padding: 10px 15px;
+    text-align: center;
+    font-size: 18px;
+    color: white;
+    transition-duration: 0.25s;
+    font-weight: 300;
+}
+
+.input:hover {
+    background-color: fade(white, 40%);
+}
+
+.input:focus {
+    background-color: white;
+    color : black;
+    width: 450px;
+    box-shadow: 0px 0px 7px white;
+}
+
+.input::placeholder {
+    color:white;
+}
+
+.des {
+    font-family: 'Gowun Dodum', sans-serif;
+    color: white;
+    margin-top: 50px;
+    font-size: 18px;
+}
+
+.bubbly-button {
+    font-family: 'Gowun Dodum', sans-serif;
+    z-index: 10;
+    display: inline-block;
+    font-size: 1em;
+    padding: 1em 2em;
+    margin-top: 40px;
+    margin-bottom: 60px;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #ff0081;
+    color: #fff;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+    box-shadow: 0 2px 25px rgba(255, 0, 130, 0.5);
+}
+.bubbly-button:focus {
+    outline: 0;
+}
+.bubbly-button:before, .bubbly-button:after {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 140%;
+    height: 100%;
+    left: -20%;
+    z-index: -1000;
+    transition: all ease-in-out 0.5s;
+    background-repeat: no-repeat;
+}
+.bubbly-button:before {
+    display: none;
+    top: -75%;
+    background-image: radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, transparent 20%, #ff0081 20%, transparent 30%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, transparent 10%, #ff0081 15%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%);
+    background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
+}
+.bubbly-button:after {
+    display: none;
+    bottom: -75%;
+    background-image: radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, transparent 10%, #ff0081 15%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%);
+    background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
+}
+.bubbly-button:active {
+    transform: scale(0.9);
+    background-color: #e60074;
+    box-shadow: 0 2px 25px rgba(255, 0, 130, 0.2);
+}
+.bubbly-button.animate:before {
+    display: block;
+    animation: topBubbles ease-in-out 0.75s forwards;
+}
+.bubbly-button.animate:after {
+    display: block;
+    animation: bottomBubbles ease-in-out 0.75s forwards;
+}
+
+@keyframes topBubbles {
+    0%{
+      background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
+    }
+      50% {
+        background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 90% 30%;}
+   100% {
+      background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%, 90% 20%;
+    background-size: 0% 0%, 0% 0%,  0% 0%,  0% 0%,  0% 0%,  0% 0%;
+    }
+}
+  
+@keyframes bottomBubbles {
+    0%{
+      background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%, 70% -10%, 70% 0%;
+    }
+    50% {
+      background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%, 105% 0%;}
+   100% {
+      background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%;
+    background-size: 0% 0%, 0% 0%,  0% 0%,  0% 0%,  0% 0%,  0% 0%;
+    }
+  }
