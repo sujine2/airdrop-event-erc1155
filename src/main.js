@@ -301,7 +301,7 @@ function Main() {
                       setUserAddr(e.target.value);
                     }}
                     value={userAddr}
-                    placeholder="기존 Address"
+                    placeholder="Klip Address"
                   ></input>
                 </form>
                 <br />
@@ -314,7 +314,7 @@ function Main() {
                       setNewUserAddr(e.target.value);
                     }}
                     value={newUserAddr}
-                    placeholder="새 Address"
+                    placeholder="Kaikas Address"
                   ></input>
                 </form>
               </div>

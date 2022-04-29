@@ -321,7 +321,7 @@ function Main() {
                       setNewUserAddr(e.target.value);
                     }}
                     value={newUserAddr}
-                    placeholder="New Kaikas Address"
+                    placeholder="Kaikas Address"
                   ></input>
                 </form>
               </div>
