@@ -33,6 +33,7 @@ html, body {
 }
 
 .estrela {
+    z-index: 0;
     pointer-events: none;
     background-color: white;
     border-radius: 50%;
@@ -130,17 +131,44 @@ html, body {
    position: relative;
    margin-top: 30%;
    width: 50%;
-   height: 60%;
+   height: auto;
    margin: 0 auto;
    background-color: rgba(255, 255, 255, 0.1);
    border-radius: 10px;
    z-index: 10;
+   padding-left: 30px;
+   padding-right: 30px;
 }
 
 .userAddr {
     margin: 0 auto;
-    margin-top: 20vh;
+    margin-top: 5vh;
 }
+
+.newUserAddr {
+    margin: 0 auto;
+}
+
+.newUserAddr input {
+    font-family: 'Gowun Dodum', sans-serif;
+    position: relative;
+    left: 0%;
+    z-index: 10;
+    width: 300px;
+    height: 45px;
+    border-radius: 3px;
+    border: 0.8px solid rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.1);
+    appearance: none;
+    outline: 0;
+    padding: 10px 15px;
+    text-align: center;
+    font-size: 18px;
+    color: white;
+    transition-duration: 0.25s;
+    font-weight: 300;
+}
+
 
 .userAddr input {
     font-family: 'Gowun Dodum', sans-serif;
@@ -148,7 +176,27 @@ html, body {
     top: 10px;
     left: 0%;
     z-index: 10;
-    margin-top: 50px;
+    width: 300px;
+    height: 45px;
+    border-radius: 3px;
+    border: 0.8px solid rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.1);
+    appearance: none;
+    outline: 0;
+    padding: 10px 15px;
+    text-align: center;
+    font-size: 18px;
+    color: white;
+    transition-duration: 0.25s;
+    font-weight: 300;
+}
+
+.userAddr_ input {
+    font-family: 'Gowun Dodum', sans-serif;
+    position: relative;
+    top: 10px;
+    left: 0%;
+    z-index: 10;
     width: 300px;
     height: 45px;
     border-radius: 3px;
@@ -179,10 +227,30 @@ html, body {
     color:white;
 }
 
+.auth {
+    z-index: 10;
+    position: relative;
+    font-family: 'Gowun Dodum', sans-serif;
+    margin-left: 1vw;
+    border: 0.8px solid rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.1);
+    appearance: none;
+    outline: 0;
+    color: white;
+}
+
 .des {
+
+    padding-top: 60px;
     font-family: 'Gowun Dodum', sans-serif;
     color: white;
-    margin-top: 50px;
+    font-size: 18px;
+}
+
+.des_ {
+    margin-top: 80px;
+    font-family: 'Gowun Dodum', sans-serif;
+    color: white;
     font-size: 18px;
 }
 
@@ -267,4 +335,136 @@ html, body {
       background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%;
     background-size: 0% 0%, 0% 0%,  0% 0%,  0% 0%,  0% 0%,  0% 0%;
     }
+  }
+
+
+.wallet {
+    z-index: 10;
+    position: fixed;
+    cursor: pointer;
+    bottom: 2vw;
+    right: 3vw;
+    width: 13%;
+}
+
+.mainWalletConnect{
+    width: 100%;
+    color: white;
+    background: #73695D;
+    border : 0;
+    border-radius: 5px;
+    
+    height: 4vh;
+    /* margin-right: 30px; */
+    padding-top: 10px;
+    padding-bottom: 35px;
+    
+}
+  
+.mainWalletConnect:hover {
+    background: #73695D;
+    box-shadow: 0 0 15px #73695D;
+    border : 0;
+}
+  
+.mainWalletConnect:focus{
+    background: #73695D;
+    border-color: 2px #73695D;
+}
+
+.language{
+    left: 2vw;
+    font-size: 20px;
+    font-family: 'Gowun Dodum', sans-serif;
+    position: fixed;
+    bottom: 3vh;
+    color: white;
+    width: 10vw;
+    text-align: center;
+    cursor: pointer;
+    padding: 20px;
+  }
+  
+  .language:hover > .eng{
+    display: block;
+  }
+  .kor{
+    border-radius: 20px;
+    box-shadow: 0px 0px 5px rgba(255, 255, 255, 1);
+    opacity: 0.5;
+  }
+  .kor:hover{
+    opacity: 1;
+  }
+  
+  .eng a{
+    font-size: 20px;
+    text-decoration-line: none;
+    color: white
+  }
+  .eng{
+    border-radius: 20px;
+    box-shadow: 0px 0px 5px rgba(255, 255, 255, 1);
+    opacity: 0.5;
+    color: white;
+    display: none;
+    margin-bottom: 20px;
+  }
+  
+  .eng:hover{
+    opacity: 1;
+  }
+
+
+
+  .language_eng{
+    z-index: 10;
+    left: 2vw;
+    font-size: 20px;
+    font-family: 'Gowun Dodum', sans-serif;
+    position: fixed;
+    bottom: 3vh;
+    color: white;
+    width: 10vw;
+    text-align: center;
+    cursor: pointer;
+    padding: 20px;
+  }
+  
+  .language_eng:hover > .kor_eng{
+    display: block;
+  }
+  .eng_eng{
+    border-radius: 20px;
+    box-shadow: 0px 0px 5px rgba(255, 255, 255, 1);
+    opacity: 0.5;
+  }
+  .eng_eng:hover{
+    opacity: 1;
+  }
+  .kor_eng a{
+    font-size: 20px;
+    text-decoration-line: none;
+    color: white
+  }
+  
+  .kor_eng{
+    border-radius: 20px;
+    box-shadow: 0px 0px 5px rgba(255, 255, 255, 1);
+    opacity: 0.5;
+    display: none;
+    margin-bottom: 20px;
+  }
+  
+  .kor_eng:hover{
+    opacity: 1;
+  }
+
+
+  .title {
+    margin-top: 130px;
+    text-align: center;
+    font-size: 30px;
+    color: white;
+    font-family: 'Gowun Dodum', sans-serif;
   }

@@ -32,6 +32,11 @@ function getRandomArbitrary(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
+var generateRandom = function (min, max) {
+  var ranNum = Math.floor(Math.random() * (max - min + 1)) + min;
+  return ranNum;
+};
+
 function Main() {
   const [email, setEmail] = React.useState("");
   const [klipAddr, setKlipAddr] = React.useState("");
@@ -104,7 +109,7 @@ function Main() {
           // send verification mail.
           sendEmailVerification(auth.currentUser);
 
-          alert("메일함을 확인해 주세요.");
+          alert("Please check your mailbox.");
           auth.signOut();
         })
         .catch(async (error) => {
@@ -114,7 +119,7 @@ function Main() {
                 sendEmailVerification(userCredential.user)
                   .then((e) => {
                     // See the UserRecord reference doc for the contents of userRecord.
-                    alert("메일함을 확인해 주세요.");
+                    alert("Please check your mailbox.");
                   })
                   .catch((error) => {
                     //console.log("안된 안됨", error);
@@ -183,7 +188,7 @@ function Main() {
                 className="mainWalletConnect"
                 onClick={async () => {
                   if (klaytn === undefined) {
-                    alert("카이카스 지갑을 설치해 주세요!");
+                    alert("Please install Kaikas wallet!");
                   } else {
                     await klaytn.enable();
                     window.location.reload();
@@ -199,7 +204,7 @@ function Main() {
                     marginBottom: 6,
                   }}
                 ></img>
-                Kaikas로 로그인
+                Login as Kaikas
               </button>
             )}
             {klaytn !== undefined && klaytn.selectedAddress !== undefined && (
@@ -213,7 +218,7 @@ function Main() {
                     marginBottom: 6,
                   }}
                 ></img>
-                Kaikas 연결됨
+                Kaikas connected
               </button>
             )}
           </div>
@@ -221,17 +226,18 @@ function Main() {
           {/* {console.log(auth.currentUser)} */}
           <div className="inputAddr">
             <div className="des">
-              고양이 별의 첫번째 NFT 발행을 축하드립니다! <br />
-              이벤트에 참여해 주셔서 감사합니다. <br />
-              앞으로 고양이 별에 많은 관심 부탁드립니다. <br />
+              Congratulations on the first NFT minting of Cat Star! <br />
+              Thank you for participating in the event.
+              <br />
+              We ask for your interest and support. <br />
               <br />
               <br />
               <p>
-                &#128680; 클립(Klip) 지갑으로 등록하신 경우 Opensea 에서 NFT를
-                볼 수 없습니다. <br />
+                &#128680; If you have registered as a Klip wallet, you will not
+                be able to view the NFT in Opensea. <br />
                 <div style={{ fontWeight: "bold" }}>
-                  따라서 klip wallet 을 체크하시고 아래의 설명에 따라 새로운
-                  지갑을 입력해 주세요.
+                  Therefore, please check the klip wallet and enter a new wallet
+                  address as described below.
                 </div>
               </p>
             </div>
@@ -272,9 +278,10 @@ function Main() {
                 }}
               >
                 <p className="des_">
-                  1. 이메일 인증 : Klip 주소를 입력해 주세요. <br />
-                  (*참고 : 인증 메일은 이벤트 참여시 입력하셨던 이메일로
-                  전송됩니다.)
+                  1. Email authentication: Please enter your Klip address.{" "}
+                  <br />
+                  (*Note: Certification mail will be sent to the email you
+                  entered in the form when you participated in the event.)
                 </p>
                 <input
                   type="text"
@@ -285,12 +292,12 @@ function Main() {
                   }}
                 ></input>
                 <button className="auth" onClick={sendEmail}>
-                  인증
+                  Authentication
                 </button>
                 <br />
                 <p className="des_">
-                  2. 새 kaikas 지갑 주소 : klip 지갑 주소와 새 kaikas 지갑
-                  주소를 입력해 주세요.
+                  2. New kaikas Wallet Address: Enter klip Wallet Address and
+                  New kaikas Wallet Address.
                 </p>
                 <form className="userAddr_">
                   <input
@@ -301,7 +308,7 @@ function Main() {
                       setUserAddr(e.target.value);
                     }}
                     value={userAddr}
-                    placeholder="기존 Address"
+                    placeholder="Klip Address"
                   ></input>
                 </form>
                 <br />
@@ -314,7 +321,7 @@ function Main() {
                       setNewUserAddr(e.target.value);
                     }}
                     value={newUserAddr}
-                    placeholder="새 Address"
+                    placeholder="New Kaikas Address"
                   ></input>
                 </form>
               </div>
@@ -347,7 +354,7 @@ function Main() {
                     (await klaytn._kaikas.isUnlocked()) === false ||
                     klaytn.selectedAddress === undefined
                   ) {
-                    alert("kaikas 로 로그인 해주세요!");
+                    alert("Please login with Kaikas!");
                   } else if ($(".checkBox").is(":checked")) {
                     const email = emails[users.indexOf(userAddr)];
                     if (email == undefined) {
@@ -398,7 +405,7 @@ function Main() {
                         })
                         .catch((error) => {
                           if (error.code === "auth/user-not-found") {
-                            alert("이메일 인증을 해주세요.");
+                            alert("Please verify your email.");
                           }
                         });
                     }
@@ -445,13 +452,13 @@ function Main() {
             <div className="textura"></div>
           </div>
           <br />
-          <div className="language">
-            <div className="eng">
-              <Link to="/event/eng" className="move">
-                Engnlish
+          <div className="language_eng">
+            <div className="kor_eng">
+              <Link to="/event" className="move">
+                한국어
               </Link>
             </div>
-            <div className="kor">한국어</div>
+            <div className="eng_eng">Engnlish</div>
           </div>
         </div>
       )}
