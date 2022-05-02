@@ -228,14 +228,8 @@ function Main() {
             )}
           </div>
           <br />
-          <div className="title">
-            점검 중입니다. 이용에 불편을 드려 죄송합니다.
-            <br />
-            It's under inspection. We apologize for the inconvenience.
-          </div>
-          <div className="title"></div>
           {/* {console.log(auth.currentUser)} */}
-          {/* <div className="inputAddr">
+          <div className="inputAddr">
             <div className="des">
               고양이 별의 첫번째 NFT 발행을 축하드립니다! <br />
               이벤트에 참여해 주셔서 감사합니다. <br />
@@ -456,19 +450,19 @@ function Main() {
                 mint
               </button>
             </div>
-          </div> */}
+          </div>
           <div className="lua">
             <div className="textura"></div>
           </div>
           <br />
-          {/* <div className="language">
+          <div className="language">
             <div className="eng">
               <Link to="/event/eng" className="move">
                 Engnlish
               </Link>
             </div>
             <div className="kor">한국어</div>
-          </div> */}
+          </div>
         </div>
       )}
     </>
