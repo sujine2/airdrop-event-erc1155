@@ -461,14 +461,14 @@ function Main() {
             <div className="textura"></div>
           </div>
           <br />
-          <div className="language">
+          {/* <div className="language">
             <div className="eng">
               <Link to="/event/eng" className="move">
                 Engnlish
               </Link>
             </div>
             <div className="kor">한국어</div>
-          </div>
+          </div> */}
         </div>
       )}
     </>
